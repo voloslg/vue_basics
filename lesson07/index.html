@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="../js/vue.js"></script>
+    <title>Directives</title>
+  </head>
+  <body>
+    <div id="app">
+      <!-- Common way -->
+      <img v-bind:src="src" v-bind:alt="alt" />
+      <!-- Short way -->
+      <!-- <img v-bind:src="src" v-bind:alt="alt" /> -->
+      <a v-bind:href="link">Google</a>
+      <p v-text="myText"></p>
+      <div v-html="myHtml"></div>
+    </div>
+  </body>
+  <script src="app.js"></script>
+</html>
