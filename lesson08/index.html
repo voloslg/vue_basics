@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="../js/vue.js"></script>
+    <title>Directives</title>
+  </head>
+  <body>
+    <div id="app">
+      <!-- <p v-if="userAge > allowedAge">
+        You are good to go
+      </p>
+      <p v-else-if="user === 'Sara'">You are good to go</p>
+      <p v-else>You are not allowed</p> -->
+
+      <!-- <p v-if="checkUser()">
+        show it
+      </p>
+      <p v-else>
+        you are not allowed
+      </p> -->
+
+      <!-- <p v-show="user === 'Sara'">
+        show it
+      </p>
+      <p v-show="user !== 'Sara'">
+        not show it
+      </p> -->
+
+      <p v-show="checkUser()">
+        show it
+      </p>
+      <p v-show="!checkUser()">
+        not show it
+      </p>
+
+      <!-- Impornant notice -->
+      <!-- 
+      v-show adds to DOM elent with style display: none 
+      v-if does not render element at all -->
+    </div>
+  </body>
+  <script src="app.js"></script>
+</html>
