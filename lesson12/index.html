@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="../js/vue.js"></script>
+    <title>Directives</title>
+  </head>
+  <body>
+    <div id="app">
+      <h1>{{ name }}</h1>
+      <!-- Passing an agrument and grub the event -->
+      <button v-on:click="updateName('Bob', $event)">Click me!</button>
+      <!-- Modifier - modify the event -->
+      <button v-on:click.right="updateName('John', $event)">
+        Right Click me!
+      </button>
+      <hr />
+      <!-- Preven default modifier -->
+      <form v-on:submit.prevent="heanleForm">
+        <input type="text" />
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </body>
+  <script src="app.js"></script>
+</html>
