@@ -9,10 +9,19 @@
   </head>
   <body>
     <div id="app">
-      <div
+      <!-- <div
         class="element"
         v-bind:class="{red:redColor}"
-        v-on:click="toggleRed()"
+        v-on:click="toggleRed(), newStyle.fontSize = '10px'"
+        v-bind:style="newStyle"
+      >
+        This is my content!
+      </div> -->
+
+      <div
+        class="element"
+        v-bind:class="colorStyle"
+        v-on:click="colorStyle = 'red'"
       >
         This is my content!
       </div>

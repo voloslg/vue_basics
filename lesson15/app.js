@@ -1,7 +1,13 @@
 new Vue({
   el: "#app",
   data: {
-    redColor: true
+    colorStyle: "blue",
+    redColor: true,
+    blueColor: true,
+    newStyle: {
+      fontSize: "20px",
+      border: "5px solid green"
+    }
   },
 
   methods: {
