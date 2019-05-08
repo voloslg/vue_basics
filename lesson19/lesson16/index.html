@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="../js/vue.js"></script>
+    <title>Computed and wathers</title>
+  </head>
+  <body>
+    <div id="app">
+      <input type="text" v-model="user" />
+      <button v-on:click="toggleActive">Other action</button>
+      <hr />
+      <div>Name {{ compMessage }}</div>
+      <div>Active: {{ isActive() }}</div>
+      <div>Loading: {{ loading }}</div>
+    </div>
+  </body>
+  <script src="app.js"></script>
+</html>
