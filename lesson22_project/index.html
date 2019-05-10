@@ -23,11 +23,19 @@
         <div class="error_label" v-if="showError">
           You must enter a name
         </div>
-      </div>
-      <div id="result" class="container" v-if="!state">
-        <div class="result_container">
-          <h1>THhe looser is</h1>
-          <p>{{ name }}</p>
+        <div class="list_of_names">
+          <div v-for="(name,index) in names" :key="index">{{ name }}</div>
+        </div>
+        <div v-if="names.length > 1">
+          <div class="action_button">
+            Check the looser
+          </div>
+        </div>
+        <div id="result" class="container" v-if="!state">
+          <div class="result_container">
+            <h1>The looser is</h1>
+            <p>{{ name }}</p>
+          </div>
         </div>
       </div>
     </div>

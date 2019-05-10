@@ -9,9 +9,9 @@ new Vue({
   methods: {
     addNameToList() {
       if (this.valitate(this.inputName)) {
-        console.log("Valid");
         this.names.push(this.inputName);
         // Clear input
+        console.log(this.names.length);
         this.inputName = "";
         this.showError = false;
       } else {
