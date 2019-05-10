@@ -4,27 +4,38 @@ new Vue({
     state: true,
     inputName: "",
     names: [],
-    showError: false
+    showError: false,
+    result: ""
   },
   methods: {
     addNameToList() {
-      if (this.valitate(this.inputName)) {
+      if (this.validate(this.inputName)) {
         this.names.push(this.inputName);
-        // Clear input
-        console.log(this.names.length);
         this.inputName = "";
         this.showError = false;
       } else {
-        console.log("Not valid");
         this.showError = true;
       }
     },
-    valitate(value) {
+    removeName(index) {
+      this.names.splice(index, 1);
+    },
+    validate(value) {
       if (value !== "") {
         return true;
       } else {
         return false;
       }
+    },
+    showResults() {
+      let rand = this.names[Math.floor(Math.random() * this.names.length)];
+      this.result = rand;
+      this.state = false;
+    },
+    resetApp() {
+      this.state = true;
+      this.names = [];
+      this.result = "";
     }
   }
 });
