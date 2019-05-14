@@ -2,11 +2,15 @@
   <div>
     <app-header></app-header>
     <div class="container">
+      {{name}}
+      // Emit event to uptade patent prop
       <compUserProfile
         :userName="name"
         :userLastName="lastName"
         :userAge="age"
         :userParents="parents"
+        :updateLastName="updateLastName"
+        @userName="name = $event"
       />
     </div>
     <compFooter/>
@@ -28,6 +32,11 @@ export default {
         father: "Jack"
       }
     };
+  },
+  methods: {
+    updateLastName(value) {
+      return (this.lastName = value);
+    }
   },
   components: {
     compFooter,

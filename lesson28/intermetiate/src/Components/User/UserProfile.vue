@@ -26,6 +26,7 @@
         </li>
       </ul>
       <button @click="updateName">Update name</button>
+      <button @click="updateLastName('Jordan')">Update Last Name</button>
     </div>
   </div>
 </template>
@@ -39,11 +40,14 @@ export default {
     userName: String,
     userLastName: String,
     userAge: Number,
-    userParents: Object
+    userParents: Object,
+    updateLastName: Function
   },
   methods: {
     updateName() {
-      return (this.userName = "Bob");
+      // Emit event to update parent prop
+      this.$emit("userName", "Frank Sinatra");
+      // return (this.userName = "Bob");
     }
   }
 };
