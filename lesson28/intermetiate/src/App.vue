@@ -2,7 +2,7 @@
   <div>
     <app-header></app-header>
     <div class="container">
-      <compUserProfile :name="name"/>
+      <compUserProfile :name="name" lastName="Dozier"/>
     </div>
     <compFooter/>
   </div>

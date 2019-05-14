@@ -6,14 +6,24 @@
           <span>Name:</span>
           {{name}}
         </li>
+        <li>
+          <span>Last name:</span>
+          {{lastName}}
+        </li>
       </ul>
+      <button @click="updateName">Update name</button>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  props: ["name"]
+  props: ["name", "lastName"],
+  methods: {
+    updateName() {
+      return (this.name = "Bob");
+    }
+  }
 };
 </script>
 
