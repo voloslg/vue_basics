@@ -2,7 +2,12 @@
   <div>
     <app-header></app-header>
     <div class="container">
-      <compUserProfile :name="name" lastName="Dozier"/>
+      <compUserProfile
+        :userName="name"
+        :userLastName="lastName"
+        :userAge="age"
+        :userParents="parents"
+      />
     </div>
     <compFooter/>
   </div>
@@ -15,7 +20,13 @@ import compUserProfile from "./Components/User/UserProfile.vue";
 export default {
   data() {
     return {
-      name: "Sara"
+      name: "Sara",
+      lastName: "Smith",
+      age: 25,
+      parents: {
+        mother: "Marta",
+        father: "Jack"
+      }
     };
   },
   components: {

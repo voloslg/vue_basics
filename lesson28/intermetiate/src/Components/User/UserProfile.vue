@@ -4,11 +4,25 @@
       <ul>
         <li>
           <span>Name:</span>
-          {{name}}
+          {{userName}}
         </li>
         <li>
           <span>Last name:</span>
-          {{lastName}}
+          {{userLastName}}
+        </li>
+        <li>
+          <span>Age:</span>
+          {{userAge}}
+        </li>
+      </ul>
+      <h3>Parents</h3>
+      <ul>
+        <!-- <li>Mother: {{userParents.mother}}</li> -->
+        <!-- <li>Mother: {{userParents.father}}</li> -->
+        <li v-for="(key, value, index) in userParents" :key="index">
+          <span>{{value}}</span>
+          :
+          {{key}}
         </li>
       </ul>
       <button @click="updateName">Update name</button>
@@ -18,10 +32,18 @@
 
 <script>
 export default {
-  props: ["name", "lastName"],
+  // Props as array
+  // props: ["userName", "userLastName"],
+  // Props as objects
+  props: {
+    userName: String,
+    userLastName: String,
+    userAge: Number,
+    userParents: Object
+  },
   methods: {
     updateName() {
-      return (this.name = "Bob");
+      return (this.userName = "Bob");
     }
   }
 };
