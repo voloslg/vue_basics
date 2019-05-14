@@ -1,44 +1,41 @@
 <template>
-    <div>
-        <app-header></app-header>
-
-        <div class="container">
-            <div>{{ name }}</div>
-        </div>
-        
-        <compFooter/>
+  <div>
+    <app-header></app-header>
+    <div class="container">
+      <compUserProfile :name="name"/>
     </div>
+    <compFooter/>
+  </div>
 </template>
 
 <script>
-    import compFooter from './Components/Header_footer/Footer.vue';
+import compFooter from "./Components/Header_footer/Footer.vue";
+import compUserProfile from "./Components/User/UserProfile.vue";
 
-
-    export default {
-        data(){
-            return {
-                name: "Francis"
-            }
-        },
-        components:{
-            compFooter
-        }
-    }
+export default {
+  data() {
+    return {
+      name: "Sara"
+    };
+  },
+  components: {
+    compFooter,
+    compUserProfile
+  }
+};
 </script>
 
 <style>
-  body {
-      padding:0;
-      margin:0;
-      font-family: 'Roboto', sans-serif;
-  }
-  .container {
-      min-height: 84vh;
-      box-sizing: border-box;
-      padding:20px;
-  }
-
-
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+.container {
+  min-height: 84vh;
+  box-sizing: border-box;
+  padding: 20px;
+}
 </style>
 
 
