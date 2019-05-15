@@ -12,6 +12,7 @@
         :updateLastName="updateLastName"
         @userName="name = $event"
       />
+      <compFriends/>
     </div>
     <compFooter/>
   </div>
@@ -20,6 +21,7 @@
 <script>
 import compFooter from "./Components/Header_footer/Footer.vue";
 import compUserProfile from "./Components/User/UserProfile.vue";
+import compFriends from "./Components/User/Friends.vue";
 
 export default {
   data() {
@@ -40,7 +42,8 @@ export default {
   },
   components: {
     compFooter,
-    compUserProfile
+    compUserProfile,
+    compFriends
   }
 };
 </script>

@@ -26,13 +26,22 @@
         </li>
       </ul>
       <button @click="updateName">Update name</button>
-      <button @click="updateLastName('Jordan')">Update Last Name</button>
+      <button @click="update=LastName('Jordan')">Update Last Name</button>
+      <div>
+        <input type="text" v-model="friendInput">
+        <button @click="addFriend">Add friend</button>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import { bus } from "../../main.js";
+
 export default {
+  data() {
+    return { friendInput: "" };
+  },
   // Props as array
   // props: ["userName", "userLastName"],
   // Props as objects
@@ -48,6 +57,9 @@ export default {
       // Emit event to update parent prop
       this.$emit("userName", "Frank Sinatra");
       // return (this.userName = "Bob");
+    },
+    addFriend() {
+      bus.$emit("addFriend", this.friendInput);
     }
   }
 };
