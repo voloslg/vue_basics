@@ -3,8 +3,16 @@
 <template>
   <div class="user_profile">
     <h3>User profile:</h3>
-    <slot></slot>
-    <slot></slot>
+    <div>
+      <slot name="other">
+        <h3>Loading...</h3>
+      </slot>
+      <slot name="main_habilities"></slot>
+      <slot name="notes"></slot>
+      <hr>
+      <!-- Default slot value -->
+      <slot></slot>
+    </div>
   </div>
 </template>
 
