@@ -13,6 +13,12 @@
         @userName="name = $event"
       />
       <compFriends/>
+
+      <compHabilities>
+        <ul>
+          <li v-for="(hab, index) in habilities" :key="index">{{ hab}}</li>
+        </ul>
+      </compHabilities>
     </div>
     <compFooter/>
   </div>
@@ -22,6 +28,7 @@
 import compFooter from "./Components/Header_footer/Footer.vue";
 import compUserProfile from "./Components/User/UserProfile.vue";
 import compFriends from "./Components/User/Friends.vue";
+import compHabilities from "./Components/User/Habilities";
 
 export default {
   data() {
@@ -32,7 +39,8 @@ export default {
       parents: {
         mother: "Marta",
         father: "Jack"
-      }
+      },
+      habilities: ["HTML", "CSS", "JS"]
     };
   },
   methods: {
@@ -40,15 +48,18 @@ export default {
       return (this.lastName = value);
     }
   },
+
+  // Registering components
   components: {
     compFooter,
     compUserProfile,
-    compFriends
+    compFriends,
+    compHabilities
   }
 };
 </script>
 
-<style>
+<style scoped>
 body {
   padding: 0;
   margin: 0;

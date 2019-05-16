@@ -8,6 +8,7 @@
 </template>
 
 <script>
+// To transfer props between components
 import { bus } from "../../main.js";
 
 export default {
